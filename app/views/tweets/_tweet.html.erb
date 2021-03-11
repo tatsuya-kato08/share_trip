@@ -4,10 +4,10 @@
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
-      <%= @tweet.title %>
+      <%= tweet.title %>
     </h2>
     <div class="item-img-content">
-      <%= image_tag @tweet.image ,class:"item-box-img" %>
+      <%= image_tag tweet.image ,class:"item-box-img" %>
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -17,28 +17,9 @@
         <%= "配送料負担" %>
       </span>
     </div>
-    <% if user_signed_in? %>
-      <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
-      <% end %>
-      <% if current_user.id == @tweet.user.id %>
-        <%= link_to "投稿の編集", edit_tweet_path, method: :get, class: "item-red-btn" %>
-        <p class="or-text">or</p>
-        <%= link_to "投稿の削除", tweet_path, method: :delete, class:"item-destroy" %>
-      <% end %>
-    <% end %>
-    <div class="comments">
-      <h4>＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
-        </p>
-      <% end %>
-    </div>
+    
     <div class="item-explain-box">
-      <span><%= @tweet.text %></span>
+      <span><%= tweet.text %></span>
     </div>
     <table class="detail-table">
       <tbody>

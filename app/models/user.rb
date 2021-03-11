@@ -14,4 +14,7 @@ class User < ApplicationRecord
   end
 
   has_many :tweets
+  has_many :user_maps
+  has_many :maps, through: :user_maps
+  has_many :comments
 end
