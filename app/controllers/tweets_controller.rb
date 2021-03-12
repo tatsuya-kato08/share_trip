@@ -1,6 +1,5 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  before_action :move_to_index, expect: [:index, :show, :search]
 
   def index
     @tweets = Tweet.all.order("created_at DESC")
@@ -57,9 +56,5 @@ class TweetsController < ApplicationController
     params.require(:tweet).permit(:image, :title, :text).merge(user_id: current_user.id)
   end
 
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
+  
 end
