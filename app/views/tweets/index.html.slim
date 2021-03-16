@@ -3,11 +3,11 @@
   - # 画面上部の「人生を変えるフリマアプリ」帯部分
   .title-contents
     h2.service-title
-      |  人生を変えるフリマアプリ 
+      |  旅に出よう 
     p.service-explain
-      |  FURIMAはだれでもかんたんに出品・購入できる 
+      |  Share Tripはだれでもかんたんに旅行計画ができる 
     p.service-explain
-      |  フリマアプリです 
+      |  旅行計画アプリです 
     .store-btn
       = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
       = link_to image_tag("dl-android.png", class:"google-btn"), "#"
@@ -15,7 +15,7 @@
   - # FURIMAが選ばれる3つの理由部分
   .select-reason-contents
     h2.title
-      |  FURIMAが選ばれる3つの理由 
+      |  簡単3ステップ 
     ul.reason-lists
       li.list
         = image_tag "furima-intro01.png", class:"list-pict"
@@ -23,41 +23,41 @@
           | 1
         h3.reason-list-text
           span.reason-list-blue-text
-            | 3分
-          |  ですぐに出品 
+            | 旅行計画
+          |  してすぐに出発 
         p.reason-list-description
-          |  スマホで入力するだけで簡単に出品できる！ 
+          |  スマホで旅行計画してすぐ出発！
       li.list
         = image_tag "furima-intro02.png", class:"list-pict"
         span.reason-list-number
           | 2
         h3.reason-list-text
           span.reason-list-blue-text
-            | シンプル
-          |  で使いやすい 
+            | 旅行
+          |  に行く 
         p.reason-list-description
-          |  めんどくさい入力は必要なく、検索も購入もスムーズ！ 
+          |  計画通りにスムーズに旅行！ 
       li.list
         = image_tag "furima-intro03.png", class:"list-pict"
         span.reason-list-number
           | 3
         h3.reason-list-text
-          |  手数料 
+          |  旅の思い出を 
           span.reason-list-blue-text
-            | 業界最安
+            | 共有する
         p.reason-list-description
-          |  10%でお得に出品&購入！ 
+          |  あなたの思い出を友達と共有！ 
   - # /FURIMAが選ばれる3つの理由部分
   - # 画面中央の「会員数日本一位」帯部分
   .ad-contents
     h2.ad-title
       |  会員数日本一位 
     p.ad-explain
-      |  FURIMAは、フリマアプリで最も人気。 
+      |  Share Tripは、旅行計画アプリで最も人気。 
     p.ad-explain
-      |  出品・購入回数も業界最多です！ 
+      |  旅行共有も業界最多です！ 
     p.ad-explain
-      |  ほしかったあの商品に出会えるかもしれません。 
+      |  行ってみたかったあの場所も共有されているかもしれません。 
     .store-btn
       = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
       = link_to image_tag("dl-android.png", class:"google-btn"), "#"
@@ -65,33 +65,33 @@
   - # FURIMAの特徴
   .feature-contents
     h2.title
-      |  FURIMAの特徴 
+      |  Share Tripの特徴 
     ul.feature-lists
       li.list
         = image_tag "furima-intro04.png", class:"list-pict"
         h3.feature-list-text
-          |  簡単に売り買いできる 
+          |  簡単に旅行計画を立てられる 
         p.feature-list-description
-          |  スマホひとつで、いつでもどこでも簡単に出品・購入が可能！ 
+          |  スマホひとつで、いつでもどこでも旅行の内容を確認！ 
       li.list
         = image_tag "furima-intro05.png", class:"list-pict"
         h3.feature-list-text
-          |  売上金は即日振込みに対応 
+          |  自分の旅行プランを共有可能 
         p.feature-list-description
-          |  午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします。 
+          |  どんな経路、交通機関を使ったのかも知ることができる！ 
       li.list
         = image_tag "furima-intro06.png", class:"list-pict"
         h3.feature-list-text
-          |  様々な支払いに対応 
+          |  検索機能で理想の旅行を発見 
         p.feature-list-description
-          |  お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。 
+          |  検索機能を使用してキーワードから旅行プランを発見
   - # /FURIMAの特徴
   - # 商品一覧
   .item-contents
     = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
       = form.submit "検索", class: "search-btn"
-    = link_to '新規投稿商品', "#", class: "subtitle"
+    = link_to '新規投稿', "#", class: "subtitle"
     ul.item-lists
       - @tweets.each do |tweet|
         li.list
@@ -101,12 +101,7 @@
             .item-info
               h3.item-name
                 = tweet.title
-              .item-price
-                span
-                  = "販売価格"
-                  | 円
-                  br
-                  = '配送料負担'
+
                 .star-btn
                   = image_tag "star.png", class:"star-icon"
                   span.star-count
