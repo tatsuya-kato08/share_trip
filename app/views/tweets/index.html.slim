@@ -1,0 +1,114 @@
+= render "devise/shared/header"
+.main
+  - # 画面上部の「人生を変えるフリマアプリ」帯部分
+  .title-contents
+    h2.service-title
+      |  旅に出よう 
+    p.service-explain
+      |  Share Tripはだれでもかんたんに旅行計画ができる 
+    p.service-explain
+      |  旅行計画アプリです 
+    .store-btn
+      = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
+      = link_to image_tag("dl-android.png", class:"google-btn"), "#"
+  - # /画面上部の「人生を変えるフリマアプリ」帯部分
+  - # FURIMAが選ばれる3つの理由部分
+  .select-reason-contents
+    h2.title
+      |  簡単3ステップ 
+    ul.reason-lists
+      li.list
+        = image_tag "furima-intro01.png", class:"list-pict"
+        span.reason-list-number
+          | 1
+        h3.reason-list-text
+          span.reason-list-blue-text
+            | 旅行計画
+          |  してすぐに出発 
+        p.reason-list-description
+          |  スマホで旅行計画してすぐ出発！
+      li.list
+        = image_tag "furima-intro02.png", class:"list-pict"
+        span.reason-list-number
+          | 2
+        h3.reason-list-text
+          span.reason-list-blue-text
+            | 旅行
+          |  に行く 
+        p.reason-list-description
+          |  計画通りにスムーズに旅行！ 
+      li.list
+        = image_tag "furima-intro03.png", class:"list-pict"
+        span.reason-list-number
+          | 3
+        h3.reason-list-text
+          |  旅の思い出を 
+          span.reason-list-blue-text
+            | 共有する
+        p.reason-list-description
+          |  あなたの思い出を友達と共有！ 
+  - # /FURIMAが選ばれる3つの理由部分
+  - # 画面中央の「会員数日本一位」帯部分
+  .ad-contents
+    h2.ad-title
+      |  会員数日本一位 
+    p.ad-explain
+      |  Share Tripは、旅行計画アプリで最も人気。 
+    p.ad-explain
+      |  旅行共有も業界最多です！ 
+    p.ad-explain
+      |  行ってみたかったあの場所も共有されているかもしれません。 
+    .store-btn
+      = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
+      = link_to image_tag("dl-android.png", class:"google-btn"), "#"
+  - # /画面中央の「会員数日本一位」帯部分
+  - # FURIMAの特徴
+  .feature-contents
+    h2.title
+      |  Share Tripの特徴 
+    ul.feature-lists
+      li.list
+        = image_tag "furima-intro04.png", class:"list-pict"
+        h3.feature-list-text
+          |  簡単に旅行計画を立てられる 
+        p.feature-list-description
+          |  スマホひとつで、いつでもどこでも旅行の内容を確認！ 
+      li.list
+        = image_tag "furima-intro05.png", class:"list-pict"
+        h3.feature-list-text
+          |  自分の旅行プランを共有可能 
+        p.feature-list-description
+          |  どんな経路、交通機関を使ったのかも知ることができる！ 
+      li.list
+        = image_tag "furima-intro06.png", class:"list-pict"
+        h3.feature-list-text
+          |  検索機能で理想の旅行を発見 
+        p.feature-list-description
+          |  検索機能を使用してキーワードから旅行プランを発見
+  - # /FURIMAの特徴
+  - # 商品一覧
+  .item-contents
+    = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = form.submit "検索", class: "search-btn"
+    = link_to '新規投稿', "#", class: "subtitle"
+    ul.item-lists
+      - @tweets.each do |tweet|
+        li.list
+          = link_to tweet_path(tweet.id) do
+            .item-img-content
+              = image_tag tweet.image, class: "item-img"
+            .item-info
+              h3.item-name
+                = tweet.title
+
+                .star-btn
+                  = image_tag "star.png", class:"star-icon"
+                  span.star-count
+                    | 0
+  - # /商品一覧
+= link_to(new_tweet_path, class: 'purchase-btn') do
+  span.purchase-btn-text
+    | 新規投稿
+  = image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon"
+= render "devise/shared/footer"

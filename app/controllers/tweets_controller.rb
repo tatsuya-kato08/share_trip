@@ -20,6 +20,12 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
+    @comment = Comment.new
+    @comments = @tweet.comments.includes(:user)
+  end
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
   end
 
   def edit
@@ -49,4 +55,6 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:image, :title, :text).merge(user_id: current_user.id)
   end
+
+  
 end

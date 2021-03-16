@@ -14,7 +14,7 @@ gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -56,3 +56,11 @@ gem 'devise'
 
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+gem 'dotenv-rails' # APIキーを環境変数化
+gem 'gon' # コントローラーで定義したインスタンス変数をJavaScript内で使用出来るようにする。
+gem 'geocoder' # 住所から緯度経度を算出する。
+
+gem 'slim-rails' # railsでslimを利用するためのgem
+
+gem 'html2slim' # html.erbをhtmle.slimに変換するためのgem
