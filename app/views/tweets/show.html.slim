@@ -7,23 +7,11 @@
     .item-img-content
       = image_tag @tweet.image ,class:"item-box-img"
     - if user_signed_in?
-      = form_with(model: [@tweet, @comment], local: true) do |form|
-        = form.text_area :text, placeholder: "コメントする", rows: "2"
-        = form.submit "SEND"
       - if current_user.id == @tweet.user.id
         = link_to "投稿の編集", edit_tweet_path, method: :get, class: "item-red-btn"
         p.or-text
           | or
         = link_to "投稿の削除", tweet_path, method: :delete, class:"item-destroy"
-    .comments
-      h4
-        | ＜コメント一覧＞
-      - @comments.each do |comment|
-        p
-          strong
-            = link_to comment.user.nickname, "/users/#{comment.user_id}"
-            | ：
-          = comment.text
     .item-explain-box
       span
         = @tweet.text
@@ -71,25 +59,20 @@
   - # /商品の概要
   .comment-box
     form
-      textarea.comment-text
-      p.comment-warn
-        |  相手のことを考え丁寧なコメントを心がけましょう。 
-        br
-        |  不快な言葉遣いなどは利用制限や退会処分となることがあります。 
-      button.comment-btn[type="submit"]
-        = image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"
-        span
-          | コメントする
-          span
-
-  .links
-    a.change-item-btn[href="#"]
-      |  ＜ 前の商品 
-    a.change-item-btn[href="#"]
-      |  後ろの商品 ＞ 
-  - # 詳細ページで表示されている商品のカテゴリー名を表示しましょう
-  a.another-item[href="#"]
-    = "商品のカテゴリー名"
-    | をもっと見る
-  - # //詳細ページで表示されている商品のカテゴリー名を表示しましょう
+      = form_with(model: [@tweet, @comment], local: true) do |form|
+        = form.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-text"
+        = form.submit "SEND", class: "comment-btn"
+            = image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"
+            span
+              | コメントする
+              span
+      .comments
+      h4
+        | ＜コメント一覧＞
+      - @comments.each do |comment|
+        p
+          strong
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            | ：
+          = comment.text
 = render "devise/shared/footer"
