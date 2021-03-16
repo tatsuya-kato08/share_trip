@@ -58,14 +58,9 @@
           | 不適切な商品の通報
   - # /商品の概要
   .comment-box
-    form
-      = form_with(model: [@tweet, @comment], local: true) do |form|
-        = form.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-text"
-        = form.submit "SEND", class: "comment-btn"
-            = image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"
-            span
-              | コメントする
-              span
+    = form_with(model: [@tweet, @comment], local: true) do |form|
+      = form.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-text"
+      = form.submit "SEND", class: "comment-btn"
       .comments
       h4
         | ＜コメント一覧＞
