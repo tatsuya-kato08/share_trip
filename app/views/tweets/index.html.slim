@@ -62,35 +62,9 @@
       = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
       = link_to image_tag("dl-android.png", class:"google-btn"), "#"
   - # /画面中央の「会員数日本一位」帯部分
-  - # FURIMAの特徴
-  .feature-contents
-    h2.title
-      |  Share Tripの特徴 
-    ul.feature-lists
-      li.list
-        = image_tag "furima-intro04.png", class:"list-pict"
-        h3.feature-list-text
-          |  簡単に旅行計画を立てられる 
-        p.feature-list-description
-          |  スマホひとつで、いつでもどこでも旅行の内容を確認！ 
-      li.list
-        = image_tag "furima-intro05.png", class:"list-pict"
-        h3.feature-list-text
-          |  自分の旅行プランを共有可能 
-        p.feature-list-description
-          |  どんな経路、交通機関を使ったのかも知ることができる！ 
-      li.list
-        = image_tag "furima-intro06.png", class:"list-pict"
-        h3.feature-list-text
-          |  検索機能で理想の旅行を発見 
-        p.feature-list-description
-          |  検索機能を使用してキーワードから旅行プランを発見
-  - # /FURIMAの特徴
+  
   - # 商品一覧
   .item-contents
-    = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
-      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-      = form.submit "検索", class: "search-btn"
     = link_to '新規投稿', "#", class: "subtitle"
     ul.item-lists
       - @tweets.each do |tweet|

@@ -5,10 +5,7 @@
     h2.items-sell-title
       | 投稿内容を入力
     = form_with model: @tweet, local: true do |f|
-      - # インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。
-      - # render 'shared/error_messages', model: f.object
-      - # //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。
-      - # 出品画像
+      - # 投稿画像
       .img-upload
         .weight-bold-text
           |  投稿画像 
@@ -18,8 +15,8 @@
           p
             |  クリックしてファイルをアップロード 
           = f.file_field :image, id:"item-image"
-      - # /出品画像
-      - # 商品名と商品説明
+      - # /投稿画像
+      - # 投稿内容
       .new-items
         .weight-bold-text
           |  旅行名 
@@ -32,25 +29,7 @@
             span.indispensable
               | 必須
           = f.text_area :text, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000"
-      - # /商品名と商品説明
-      - # 商品の詳細
-      .items-detail
-        .weight-bold-text
-          | 旅行の詳細
-        .form
-          .weight-bold-text
-            |  カテゴリー 
-            span.indispensable
-              | 必須
-          - # <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"})
-          |  %> 
-          .weight-bold-text
-            |  商品の状態 
-            span.indispensable
-              | 必須
-          - # <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-sales-status"})
-          |  %> 
-      - # /商品の詳細
+      - # 投稿内容
       - # 下部ボタン
       .sell-btn-contents
         = f.submit "投稿する" ,class:"sell-btn"

@@ -21,32 +21,7 @@
           th.detail-item
             | 投稿者
           td.detail-value
-            = "出品者名"
-        tr
-          th.detail-item
-            | カテゴリー
-          td.detail-value
-            = "カテゴリー名"
-        tr
-          th.detail-item
-            | 商品の状態
-          td.detail-value
-            = "商品の状態"
-        tr
-          th.detail-item
-            | 配送料の負担
-          td.detail-value
-            = "発送料の負担"
-        tr
-          th.detail-item
-            | 発送元の地域
-          td.detail-value
-            = "発送元の地域"
-        tr
-          th.detail-item
-            | 発送日の目安
-          td.detail-value
-            = "発送日の目安"
+            = @tweet.user.nickname
     .option
       .favorite-btn
         = image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"
