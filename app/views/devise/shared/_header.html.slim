@@ -13,7 +13,7 @@ header.top-page-header
       li
         = link_to '旅行計画', "#", class: "category-list"
       li
-        = link_to '地図', "#", class: "brand-list"
+        = link_to '地図', maps_path, class: "brand-list"
     ul.lists-right
       - if user_signed_in?
         li

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get '/map_request', to: 'maps#map', as: 'map_request'
   resources :maps, only: [:index]
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_022626) do
+ActiveRecord::Schema.define(version: 2021_03_18_063452) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,15 +44,12 @@ ActiveRecord::Schema.define(version: 2021_03_10_022626) do
   end
 
   create_table "maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "place_name", null: false
-    t.string "code", null: false
-    t.integer "area_id", null: false
-    t.string "city", null: false
-    t.string "number", null: false
-    t.string "phone", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_maps_on_user_id"
   end
 
