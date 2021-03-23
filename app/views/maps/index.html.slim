@@ -8,8 +8,15 @@ h2
 #map
 style
   |  #map{ height: 400px; width: 100vh } 
+  
 script
-  |  function initMap(){ let map = new google.maps.Map(document.getElementById('map'), { center: {lat: 35.6585, lng: 139.7486}, zoom: 8 }); } 
+  |   let mapInstance
+      function initMap(){ 
+        mapInstance = new google.maps.Map(document.getElementById('map'), { 
+        center: {lat: 35.6585, lng: 139.7486}, 
+        zoom: 8 
+        }); 
+      } 
 script[src="https://maps.googleapis.com/maps/api/js?key=#{ ENV['GOOGLE_MAP_API'] }&callback=initMap" async defer]
 
 = render "devise/shared/footer"
