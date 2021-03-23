@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
   get '/map_request', to: 'maps#map', as: 'map_request'
-  resources :maps, only: [:index]
+  resources :maps, only: [:index, :map]
 end
