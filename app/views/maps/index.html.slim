@@ -17,6 +17,6 @@ script
         zoom: 8 
         }); 
       } 
-script[src="https://maps.googleapis.com/maps/api/js?key=#{ ENV['GOOGLE_MAP_API'] }&callback=initMap" async defer]
+script[async src="https://maps.googleapis.com/maps/api/js?key=#{ ENV['GOOGLE_MAP_API'] }&callback=initMap"]
 
 = render "devise/shared/footer"
