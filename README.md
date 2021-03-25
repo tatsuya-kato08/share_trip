@@ -27,17 +27,17 @@ https://share-trip-34443.herokuapp.com
 
 #### ` 投稿一覧画面から１つの投稿を選択 → 投稿詳細画面へ遷移する`
 #### ` 投稿者本人であれば投稿の編集・削除が投稿詳細画面から可能になる`<br>
-[![Image from Gyazo](https://i.gyazo.com/2d0f62cabee9a02b031e9e6252b9cbea.mp4.gif)](https://i.gyazo.com/2d0f62cabee9a02b031e9e6252b9cbea.mp4)
+![Videotogif](https://user-images.githubusercontent.com/78143445/112442690-78b68780-8d8f-11eb-9720-4fbceaa41a4c.gif)
 <br>
 
 #### ` 投稿詳細画面からコメントができる`
 #### `（コメントは投稿に対して交流のために使う）`<br>
-[![Image from Gyazo](https://i.gyazo.com/94eb7212d00e92f2af4700c735007796.mp4.gif)](https://i.gyazo.com/94eb7212d00e92f2af4700c735007796.mp4)
+![Videotogif (2)](https://user-images.githubusercontent.com/78143445/112443322-29248b80-8d90-11eb-9717-35c3001963b3.gif)
 <br>
 
 #### ` 左上の地図をクリック → 地図機能画面へ遷移する`
 #### ` 目的地の検索やルート検索ができる(開発途中)`<br>
-[![Image from Gyazo](https://i.gyazo.com/34fbb55e21cb014ae794b37a89669fd8.mp4.gif)](https://i.gyazo.com/34fbb55e21cb014ae794b37a89669fd8.mp4)
+![Videotogif (3)](https://user-images.githubusercontent.com/78143445/112443671-933d3080-8d90-11eb-9728-261160eb5b93.gif)
 
 # 課題解決
 
